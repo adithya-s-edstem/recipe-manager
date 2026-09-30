@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: recipe-manager
+  datasource:
+    url: jdbc:postgresql://localhost:5432/recipes
+    username: recipes
+    password: recipes
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+server:
+  error:
+    include-stacktrace: never
+    include-message: never
+    include-binding-errors: never
+    include-exception: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+springdoc:
+  api-docs:
+    path: /api/v1/openapi.json
+  swagger-ui:
+    path: /swagger-ui.html
